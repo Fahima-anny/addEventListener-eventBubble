@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h3 id="defaultTxt">Default Text</h3>
+<input type="text" id="inputTxt" placeholder="Write Text">
+<button id="updateBtn">Update Text</button>
+
+
+<h1>COMMENTS:</h1>
+<div id="commentDiv">
+    <h4>User 1</h4>
+<P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, labore. Optio laboriosam dolorem quo expedita. Dolore unde dolorem, distinctio labore sit ratione quos velit recusandae nostrum est ipsum quaerat reprehenderit voluptate vero tenetur facere! Iure libero eos doloremque, quis nam soluta ipsa. Labore quod consequuntur quas distinctio aliquam officia et </P>
+<h4>User 2</h4>
+<P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, labore. Optio laboriosam dolorem quo expedita. Dolore unde dolorem, distinctio labore sit ratione quos velit recusandae nostrum est ipsum quaerat reprehenderit voluptate vero tenetur facere! Iure libero eos doloremque, quis nam soluta ipsa. Labore quod consequuntur quas distinctio aliquam officia et </P>
+</div>
+
+<textarea name="" cols="200" rows="3" id="textArea" placeholder="Write Comment"></textarea>
+<br>
+<button onclick="addComment()">Add comment</button>
+<br>
+<br>
+<button id="mouseEnter">Mouse enter</button>
+<br>
+<h3 id="secret">My secret revealed</h3>
+<input type="text" name="" placeholder="write delete" id="focusInp">
+<button id="deleteBtn" disabled>delete</button>
+
+
+<ul id="listContainer">
+    <li class="listItem">Lorem ipsum dolor sit amet.</li>
+    <li class="listItem">Fuga nihil quidem a eaque?</li>
+    <li class="listItem">Animi itaque sapiente numquam officia?</li>
+    <li class="listItem">Neque nesciunt asperiores quis fuga!</li>
+    <li class="listItem">Delectus itaque neque voluptate similique!</li>
+</ul>
+
+<script>
+doc
+
+
+
+document.getElementById("mouseEnter").addEventListener("mouseenter",function(){
+    console.log("Mouse triggered")
+})
+// document.getElementById("focusInp").addEventListener("focus",function(){
+//     console.log("focused")
+// })
+// document.getElementById("focusInp").addEventListener("blur",function(){
+//     console.log("blured")
+// })
+let secret = document.getElementById("secret")
+let deleteBtn = document.getElementById("deleteBtn")
+document.getElementById("focusInp").addEventListener("keyup",function(e){
+    let text = e.target.value
+    if(text==='delete'){
+        deleteBtn.removeAttribute("disabled")
+    }
+    else{
+        deleteBtn.setAttribute("disabled",true)
+    }
+})
+
+
+deleteBtn.addEventListener("click",function(){
+    document.getElementById("secret").style.display = 'none'
+})
+
+</script>
+
+    <script src="./app.js"></script>
+</body>
+</html>
